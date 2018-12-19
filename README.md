@@ -40,8 +40,10 @@ pip install virtualenv
 
 
 configuration files:
+
 * catalog.conf in apache2
 ------------------
+
 <VirtualHost *:80>
     ServerName 18.205.163.5
     ServerAlias 18.205.163.5.xip.io
@@ -62,11 +64,12 @@ configuration files:
     LogLevel warn
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-------------------
+
 
 
 *catalog.wsgi in /var/www/catalog/
 ------------------
+
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
@@ -74,7 +77,6 @@ sys.path.insert(0, "/var/www/catalog/")
 
 from catalog import app as application
 application.secret_key = 'top secret!'
-------------------
 
 
 SUDO
